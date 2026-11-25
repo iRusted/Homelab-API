@@ -83,3 +83,9 @@ async def heartbeat(
         "received": True,
         "timestamp": last_heartbeat.isoformat()
     }
+
+
+@app.get("/test-alert")
+async def test_alert():
+    await discord_alert("🧪 RustyStatus test alert!")
+    return {"sent": True}
